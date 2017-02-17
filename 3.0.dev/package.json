@@ -1,32 +1,51 @@
 {
-	"name": "ipek-elstr-jslib",
-	"description": "Elstr frontend libs",
-	"author": "ipek",
-	"version": "3.0.100",
-	"license": "MIT",
-	"peerDependencies": {
-		"mcfly": "0.0.x",
-		"keymirror": "*",
-		"flux": "2.0.x",
-		"object-assign": "*"
-	},
-	"devDependencies": {
-		"css-loader": "*",
-		"jsx-loader": "*",
-        "file-loader": "*",
-        "jsxhint-loader": "*",
-        "style-loader": "*",
-        "url-loader": "*"
-	},
-	"dependencies": {
-	  	"pouchdb": "*",
-		"superagent": "1.8.x",
-		"node-polyglot": "0.4.x",
-		"signals": "1.0.0",
-		"hasher": "1.2.x",
-		"kizzy": "0.0.x",
-		"font-awesome": "4.x",
-		"bluebird": "*",
-		"react-bootstrap": "^0.28.5"
-	}
+  "name": "ipek-elstr-jslib",
+  "description": "Elstr frontend libs",
+  "author": "ipek",
+  "version": "3.1.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "mcfly": "0.0.x",
+    "keymirror": "*",
+    "flux": "2.0.x",
+    "object-assign": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "cpx": "^1.5.0",
+    "css-loader": "*",
+    "file-loader": "*",
+    "jsx-loader": "*",
+    "jsxhint-loader": "*",
+    "rimraf": "latest",
+    "style-loader": "*",
+    "url-loader": "*"
+  },
+  "dependencies": {
+    "pouchdb": "*",
+    "superagent": "1.8.x",
+    "node-polyglot": "0.4.x",
+    "signals": "1.0.0",
+    "hasher": "1.2.x",
+    "kizzy": "0.0.x",
+    "font-awesome": "4.x",
+    "bluebird": "*",
+    "react-bootstrap": "^0.28.5"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run clean -s",
+    "build": "babel src --out-dir dist && npm run copyCss && npm run copyImages",
+    "prepublish": "npm run build",
+    "copyCss": "cpx \"src/css/*\" \"dist/css\"",
+    "copyImages": "cpx \"src/images/*\" \"dist/images\""
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ]
+  }
 }
