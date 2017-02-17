@@ -185,31 +185,25 @@ var ElstrLog = {
         if (_options.traceEnabled){
 
             var parentFunctionName;
+            var parentFunctionArguments = arguments.callee.caller !== null ? arguments.callee.caller.arguments : null;
 
-            if (arguments.callee &&
-                arguments.callee.caller &&
-                arguments.callee.caller!==null &&
-                arguments.callee.caller.arguments){
 
-                var parentFunctionArguments = arguments.callee.caller.arguments;
+            if (overrideFunctionName){
+                parentFunctionName = overrideFunctionName;
 
-                if (overrideFunctionName){
-                    parentFunctionName = overrideFunctionName;
+            }else{
 
-                }else{
-
-                    parentFunctionName = arguments.callee.caller.name;
-                    if (parentFunctionName === "") {
-                        parentFunctionName = " Anonymous func ";
-                    }
-
+                parentFunctionName = arguments.callee.caller !== null ? arguments.callee.caller.name : "";
+                if (parentFunctionName === "") {
+                    parentFunctionName = " Anonymous func ";
                 }
 
-                ElstrLog.info("ELSTR Trace: ",
-                    parentFunctionName,
-                    parentFunctionArguments);
-
             }
+
+            ElstrLog.info("ELSTR Trace: ",
+                parentFunctionName,
+                parentFunctionArguments);
+
         }
     }
 };
