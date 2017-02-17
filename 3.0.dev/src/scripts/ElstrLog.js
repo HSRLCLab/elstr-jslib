@@ -184,25 +184,7 @@ var ElstrLog = {
 
         if (_options.traceEnabled){
 
-            var parentFunctionName;
-            var parentFunctionArguments = arguments.callee.caller !== null ? arguments.callee.caller.arguments : null;
-
-
-            if (overrideFunctionName){
-                parentFunctionName = overrideFunctionName;
-
-            }else{
-
-                parentFunctionName = arguments.callee.caller !== null ? arguments.callee.caller.name : "";
-                if (parentFunctionName === "") {
-                    parentFunctionName = " Anonymous func ";
-                }
-
-            }
-
-            ElstrLog.info("ELSTR Trace: ",
-                parentFunctionName,
-                parentFunctionArguments);
+            ElstrLog.info("ELSTR Trace", overrideFunctionName);
 
         }
     }
