@@ -4,14 +4,13 @@
  * Copyrights licensed under the New BSD License
  * Created by egli@intelliact on 12.12.2014.
  */
-
-var mcFly = require('elstr-jslib/src/scripts/libs/mcFly.js');
+var mcFly = require('../libs/mcFly');
 var ElstrRealTimeConstants = require('../constants/ElstrRealTimeConstants');
 
-var ElstrLog = require('elstr-jslib/src/scripts/ElstrLog');
-var ElstrId = require('elstr-jslib/src/scripts/ElstrId');
-var ElstrUserStore = require('elstr-jslib/src/scripts/stores/ElstrUserStore');
-var ElstrConfigStore = require('elstr-jslib/src/scripts/stores/ElstrConfigStore');
+var ElstrLog = require('../ElstrLog');
+var ElstrId = require('../ElstrId');
+var ElstrUserStore = require('../stores/ElstrUserStore');
+var ElstrConfigStore = require('../stores/ElstrUserStore');
 
 
 

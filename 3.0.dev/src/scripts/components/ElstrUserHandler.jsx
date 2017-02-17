@@ -5,7 +5,7 @@ var ElstrUserStore = require('../stores/ElstrUserStore');
 var ElstrUserActions = require('../actions/ElstrUserActions');
 var ElstrLog = require('../ElstrLog');
 var ElstrLangStore = require('../stores/ElstrLangStore');
-var ElstrUserLoginDialog = require('./ElstrUserLoginDialog.jsx');
+var ElstrUserLoginDialog = require('./ElstrUserLoginDialog');
 
 // Component css
 require('../../css/ElstrUserHandler.css');
